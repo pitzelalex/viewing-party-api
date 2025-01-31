@@ -95,6 +95,8 @@ GEM
       logger
     faraday-net_http (3.1.1)
       net-http
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -244,6 +246,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   faraday
+  figaro
   jsonapi-serializer
   pg (~> 1.1)
   pry
