@@ -1,10 +1,15 @@
 class MovieService
   def self.top_rated()
-    response = conn.get("/3/discover/movie/") do |req|
+    response = conn.get("/3/discover/movie") do |req|
       req.params['page'] = 1
       req.params['language'] = 'en-US'
       req.params['sort_by'] = 'vote_average.desc'
     end
+    parse_json(response)
+  end
+
+  def self.parse_json(response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   private
